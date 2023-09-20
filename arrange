@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+for file in files/*; do
+    
+    filename=$(basename "$file")
+
+    first_letter="${filename:0:1}"
+
+    if [ ! -d "$first_letter" ]; then
+        mkdir "$first_letter"
+    fi
+
+   
+    mv "$file" "$first_letter/"
+done
+
